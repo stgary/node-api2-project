@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
     }
 
     db.insert(req.body)
-        .then(abRes => res.status(201).json(req.body))
+        .then(dbRes => res.status(201).json(req.body))
         .catch(error => {
             res.status(500).json({
                 error: 'There was an error while saving to the database.'
